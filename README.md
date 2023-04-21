@@ -1,24 +1,10 @@
-# README
+# Eating w Eyes
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Feeling curious?
+Welcome to Eating w Eyes, a recipe-sharing website! Our platform is designed for food lovers who enjoy cooking and want to share their favorite recipes. You can upload your recipes and share them with our community. 
 
-Things you may want to cover:
+Not only can you share your recipes, you can also explore other recipes that have been shared on the website. 
 
-* Ruby version
+<i>Coming soon<i>
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+1. 21.04.23 [Project Planning](https://miro.com/app/board/uXjVMReNcn4=/?share_link_id=781679698877)
