@@ -10,7 +10,9 @@ class RecipesController < ApplicationController
 
   def create
     recipe = Recipe.create recipe_params
-    redirect_to recipe
+    category = Category.find params[:category_id]
+    category_ids << recipe
+    redirect_to recipes_path
   end
 
   def edit
@@ -37,9 +39,8 @@ class RecipesController < ApplicationController
   end
 
   private
-  def recipe_params
-    # must match _form.html
-    params.require(:recipe).permit(:title, :description, :servings, :preptime, :cooktime, :ingredients, :instructions, :image, :video, :category_ids)
+    def recipe_params
+      params.require(:recipe).permit(:title, :description, :servings, :preptime, :cooktime, :ingredients, :instructions, :image, :video, category_ids: [])
+    end
   end
   
-end
