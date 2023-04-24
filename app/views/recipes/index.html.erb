@@ -1,0 +1,10 @@
+<h1>All Recipes</h1>
+<p><i>Add categories as clicking icons later</i></p>
+
+<% @recipes.each do |recipe| %>
+    <%= image_tag recipe.image, :class => "thumb" if recipe.image.present? %>
+    <%= recipe.title %>
+<% end %>
+
+<%# incorporate this later
+        <%= link_to recipe.title, recipes_show_path %>
