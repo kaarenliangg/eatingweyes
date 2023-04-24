@@ -1,5 +1,9 @@
 <h1><%= @recipe.title %></h1>
 
+<% @categories.each do |category| %>
+  <%= link_to category.name, category_path(category) %>
+<% end %>
+
 <h3> Serving: <%= @recipe.servings %></h3>
 <h3> Prep Time: <%= @recipe.preptime %></h3>
 <h3> Cooking Time: <%= @recipe.cooktime %></h3>
@@ -23,3 +27,9 @@
         <li><%= instruction.strip %></li>
     <% end %>
 </ol>
+
+
+<div class="control">
+    <%= link_to "Edit Recipe", recipes_edit_path(@recipe) %>
+    <%= link_to "Delete Recipe", @recipe, :method => :delete, :data => { :confirm => 'Are you sure?'} %>
+</div>

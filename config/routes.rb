@@ -2,6 +2,11 @@ Rails.application.routes.draw do
   resources :users
   resources :categories
   resources :recipes
+  get '/login' => 'session#new'
+  post '/login' => 'session#create'
+  delete '/login' => 'session#destroy'
+
+  
   get 'categories/index'
   get 'categories/new'
   get 'categories/create'
