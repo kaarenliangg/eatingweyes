@@ -1,0 +1,34 @@
+<%= form_for @recipe do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+
+    <%= f.label :servings %>
+    <%= f.number_field :servings %>
+
+    <%= f.label :preptime %>
+    <%= f.number_field :preptime %>
+
+    <%= f.label :cooktime %>
+    <%= f.number_field :cooktime %>
+
+    <%= f.label :ingredients %>
+    <%= f.text_field :ingredients %>
+
+    <%= f.label :instructions %>
+    <%= f.text_field :instructions %>
+
+    <%= f.label :image %>
+    <%= f.url_field :image %>
+
+    <%= f.label :video %>
+    <%= f.url_field :video %>
+
+    <%= f.label :category_ids %>
+    <%= f.collection_check_boxes :category_ids, Category.all, :id, :name, :include_blank => true %>
+    <%# find all the data using Category.all and then selecting the id and name %>
+
+    <%= f.submit %>
+<% end %>

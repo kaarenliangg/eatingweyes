@@ -5,24 +5,41 @@ class RecipesController < ApplicationController
   end
 
   def new
+    @recipe = Recipe.new
   end
 
   def create
+    recipe = Recipe.create recipe_params
+    redirect_to recipe
   end
 
   def edit
     @recipe = Recipe.find params[:id]
+    @categories = @recipe.categories
   end
 
   def update
+    recipe = Recipe.find params[:id]
+    recipe.update recipe_params
+    redirect_to recipe
   end
 
   def show
     @recipe = Recipe.find params[:id]
     @categories = @recipe.categories
+    
   end
 
   def destroy
+    recipe = Recipe.find params[:id]
+    recipe.destroy
+    redirect_to recipes_path
+  end
+
+  private
+  def recipe_params
+    # must match _form.html
+    params.require(:recipe).permit(:title, :description, :servings, :preptime, :cooktime, :ingredients, :instructions, :image, :video, :category_ids)
   end
   
 end
