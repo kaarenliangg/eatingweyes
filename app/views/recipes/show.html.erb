@@ -1,3 +1,25 @@
 <h1><%= @recipe.title %></h1>
 
+<h3> Serving: <%= @recipe.servings %></h3>
+<h3> Prep Time: <%= @recipe.preptime %></h3>
+<h3> Cooking Time: <%= @recipe.cooktime %></h3>
 
+<%= image_tag @recipe.image if @recipe.image.present?%>
+<%= video_tag @recipe.video, controls: true, size: "640x480" %>
+
+
+<% ingredients_array = @recipe.ingredients.split(',') %>
+<h3>Ingredients:</h3>
+<ul>
+    <% ingredients_array.each do |ingredient| %>
+        <li><%= ingredient.strip %></li>
+    <% end %>
+</ul>
+
+<% instructions_array = @recipe.instructions.split('_') %>
+<h3>Instructions:</h3>
+<ol>
+    <% instructions_array.each do |instruction| %>
+        <li><%= instruction.strip %></li>
+    <% end %>
+</ol>
