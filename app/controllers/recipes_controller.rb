@@ -9,18 +9,11 @@ class RecipesController < ApplicationController
   end
 
   def create
-  # recipe = Recipe.create recipe_params
-  # category = Category.find params[:category_id]
-  # recipe.category_id << category.id
-  # redirect_to recipes_path
-
-# CODE TO REVIEW
-
-recipe = Recipe.create recipe_params
-  category = Category.find params[:id]
-  recipe.categories << category
-  recipe.save
-end
+    recipe = Recipe.create recipe_params
+    category = Category.find params[:id]
+    recipe.categories << category
+    recipe.save
+  end
 
   def edit
     @recipe = Recipe.find params[:id]
