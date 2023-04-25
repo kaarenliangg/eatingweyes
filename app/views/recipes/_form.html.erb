@@ -27,8 +27,8 @@
     <%= f.url_field :video %>
 
     <%= f.label :category_ids %>
-    <%= f.collection_check_boxes :category_ids, Category.all, :id, :name, :include_blank => true %>
-    <%# find all the data using Category.all and then selecting the id and name %>
+    <%= f.collection_check_boxes :category_ids, Category.all, :id, :name %>
+    <%# find all the data using Category.all and then selecting the id and name  %>
 
     <%= f.submit %>
 <% end %>

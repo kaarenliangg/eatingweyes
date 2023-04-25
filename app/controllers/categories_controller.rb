@@ -1,8 +1,10 @@
 class CategoriesController < ApplicationController
   def index
+    @categories = Category.all
   end
 
   def new
+    @categories = Category.new
   end
 
   def create
@@ -15,6 +17,8 @@ class CategoriesController < ApplicationController
   end
 
   def show
+    @category = Category.find params[:id]
+    @recipes = @category.recipes
   end
 
   def destroy

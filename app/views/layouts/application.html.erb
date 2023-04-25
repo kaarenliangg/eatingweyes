@@ -33,6 +33,11 @@
                   <a href="#"> Dessert </a>                
                 </div>
             </div>
+        <% if @current_user.admin?%>
+          <%= link_to "New Category", new_category_path  %>
+          <%= link_to "All Category", categories_path %>
+        <% end %>
+
         <% else %>
           <%= link_to "Sign Up", users_new_path%>
           <%= link_to "Sign In", login_path %>
