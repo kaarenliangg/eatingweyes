@@ -1,4 +1,6 @@
 class CategoriesController < ApplicationController
+  before_action :check_for_admin, :only => [:index]
+  
   def index
     @categories = Category.all
   end

@@ -9,10 +9,19 @@ class RecipesController < ApplicationController
   end
 
   def create
+    # recipe = Recipe.create recipe_params
+    # category = Category.find params[:id]
+    # recipe.categories << category
+    # recipe.save
+
     recipe = Recipe.create recipe_params
-    category = Category.find params[:id]
-    recipe.categories << category
-    recipe.save
+    # HOW TO ASSOCIATE THIS MIXTAPE WITH THE CURRENT USER?
+    @current_user.recipes << recipe
+
+    # # one line version of above code
+    # @current.user.mixtapes.create mixtape_params
+    
+    redirect_to root_path # TODO: redirect somewhere better
   end
 
   def edit

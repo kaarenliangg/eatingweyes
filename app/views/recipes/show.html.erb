@@ -28,8 +28,9 @@
     <% end %>
 </ol>
 
-
-<div class="control">
-    <%= link_to "Edit Recipe", edit_recipe_path(@recipe) %>
-    <%= link_to "Delete Recipe", @recipe, :method => :delete, :data => { :confirm => 'Are you sure?'} %>
-</div>
+ <% if @current_user.present?%>
+    <div class="control">
+        <%= link_to "Edit Recipe", edit_recipe_path(@recipe) %>
+        <%= link_to "Delete Recipe", @recipe, :method => :delete, :data => { :confirm => 'Are you sure?'} %>
+    </div>
+<% end %>
