@@ -1,16 +1,16 @@
 User.destroy_all
-u1 = User.create :email => 'karen@ga.co', :password => 'chicken', :admin => true
-u2 = User.create :email => 'lisa@ga.co', :password => 'chicken'
+u1 = User.create :name => 'Karen', :email => 'karen@ga.co', :password => 'chicken', :admin => true
+u2 = User.create :name => 'Lisa', :email => 'lisa@ga.co', :password => 'chicken'
 puts "#{ User.count } users created"
 
 Recipe.destroy_all
 r1 = Recipe.create :title => 'Chinese Tomato and Egg', :description => 'The tangy tomatoes, mixed with rich scrambled eggs, a hint of sugar, and flavorful sesame oil and Shaoxing wine all come together to create a very satisfying (and vegetarian!) dish that tastes lovely on a bed of rice.', :servings => '2', :preptime => '10 mins', :cooktime => '10 mins', :ingredients => '4 eggs,1 scallion, 2 small to medium tomatoes, 3/4 tsp salt, 1/4 tsp white pepper, 1/2 tsp sesame oil, 1 tsp shaoxing wine, 3 tbsp vegetable oil, 2 tsp sugar, 1/4 - 1/2 cup water', :instructions => 'Start by cutting tomatoes into small wedges and finely chop the scallion._Crack 4 eggs into a bowl and season with 1⁄4 teaspoon salt, 1/4 teaspoon white pepper, 1/2 teaspoon sesame oil, and 1 teaspoon Shaoxing wine. Beat eggs for a minute._Preheat the wok over medium heat until it just starts to smoke. Then add 2 tablespoons of oil and immediately add the eggs. Scramble the eggs and remove from the wok immediately. Set aside._Add 1 more tablespoon oil to the wok, turn up the heat to high, and add the tomatoes and scallions. Stir-fry for 1 minute, and then add 2 teaspoons sugar, 1/2 teaspoon salt, and 1/4 cup water (if your stove gets very hot and liquid tends to cook off very quickly in your wok, add a little more water). Add the cooked eggs._Mix everything together, cover the wok, and cook for 1-2 minutes, until the tomatoes are completely softened._Uncover, and continue to stir-fry over high heat until the sauce thickens to your liking. Serve!', :image => 'https://thewoksoflife.com/wp-content/uploads/2019/05/tomato-egg-11.jpg', :video => 'https://www.youtube.com/watch?v=Wn8ox93Qhus'
 r2 = Recipe.create :title => 'Canned Tuna Pasta', :description => 'Tuna pasta is such a great dinner to make when you don’t have much in the cupboard. For canned tuna recipe cynics out there – it’s time to take a leap of faith! This is seriously tasty, very economical and super fast – it comes together in 15 minutes flat, from start to finish.', :servings => '2', :preptime => '5 mins', :cooktime => '15 mins', :ingredients => '200g spaghetti, 1bsp salt (for cooking pasta), 285g canned tuna in oil, 2 clove garlic, 1/2 tsp chilli flakes, 2 tsp baby capers, 1 tbsp parsley, 1 tsp lemon zest, 2 tbsp lemon juice, 1/4 tsp salt, 1/4 tsp black pepper', :instructions => 'Cook pasta - Bring 3 litres of water to the boil with the 1 tablespoon of salt. Cook pasta per the packet time minus 1 minute. Just before draining, scoop out ~1 cup pasta cooking water, then drain the pasta._Saute aromatics - In the same pot, heat the reserved oil from the tuna cans over medium heat. Add the garlic, anchovies and chilli flakes. Cook and stir for 1 minute._Toss pasta - Add the pasta, capers and 1/3 cup of reserved pasta water. Toss using 2 spatulas for 2 minutes._Add tuna - Turn off the heat. Add tuna, parsley, lemon zest, juice, salt and pepper. Toss gently to mix through – try to keep some tuna chunks.', :image => 'https://www.recipetineats.com/wp-content/uploads/2023/04/Canned-tuna-pasta_0-copy.jpg', :video => 'https://www.youtube.com/watch?v=yoSQ7cLUyLs'
 
-r1.user = u1
+r1.user_id = u1.id
 r1.save
 
-r2.user = u1
+r2.user_id = u2.id
 r2.save
 puts "#{ Recipe.count } recipes created.", 
 
