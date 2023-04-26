@@ -9,7 +9,11 @@
 <h3> Cooking Time: <%= @recipe.cooktime %></h3>
 
 <%= cl_image_tag @recipe.image if @recipe.image.present?%>
-<%= video_tag @recipe.video, controls: true, size: "640x480" %>
+
+
+    <%= get_video_iframe(@recipe.video) %>
+
+<%  video_tag(@recipe.video, controls: true, size: "640x480") %> 
 
 
 <% ingredients_array = @recipe.ingredients.split(',') %>

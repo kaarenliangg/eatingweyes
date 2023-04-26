@@ -18,8 +18,7 @@ class RecipesController < ApplicationController
       recipe.save
     end
     @current_user.recipes << recipe
-    # BUGGGG IFXXXX
-    redirect_to recipe_path
+    redirect_to recipe
   end
 
   def edit
@@ -43,6 +42,7 @@ class RecipesController < ApplicationController
   def show
     @recipe = Recipe.find params[:id]
     @categories = @recipe.categories
+
   end
 
   def destroy
@@ -54,6 +54,11 @@ class RecipesController < ApplicationController
   private
     def recipe_params
       params.require(:recipe).permit(:title, :description, :servings, :preptime, :cooktime, :ingredients, :instructions, :image, :video, category_ids: [])
+    end
+
+    def convert_video
+      url = @recipe.video
+      video = url.split("=").last 
     end
   end
   
