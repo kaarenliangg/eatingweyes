@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: dwuwpasl1
+  api_key: '544328467353453'
+  api_secret: Vp4BhS6UWKeIF1fvvsjgYra3pIo
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  cloud_name: dwuwpasl1
+  api_key: '544328467353453'
+  api_secret: Vp4BhS6UWKeIF1fvvsjgYra3pIo
+  enhance_image_tag: true
+  static_file_support: true
+test:
+  cloud_name: dwuwpasl1
+  api_key: '544328467353453'
+  api_secret: Vp4BhS6UWKeIF1fvvsjgYra3pIo
+  enhance_image_tag: true
+  static_file_support: false

@@ -10,6 +10,12 @@ class RecipesController < ApplicationController
 
   def create
     recipe = Recipe.create recipe_params
+    # CLOUNDINARY EDITS - checking if user has attached image uploading
+    if params[:file].present? 
+      req = Cloudinary::Uploader.upload(params[:file])
+      recipe.image = req["public_id"]
+      recipe.save
+    end
     @current_user.recipes << recipe
     redirect_to recipes_index_path
   end
@@ -26,6 +32,7 @@ class RecipesController < ApplicationController
   end
 
   def show
+    # BUGGGGG FIXXXXXXXXXXXXXXXXX
     @recipe = Recipe.find params[:id]
     @categories = @recipe.categories
   end

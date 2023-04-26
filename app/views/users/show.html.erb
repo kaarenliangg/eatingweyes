@@ -3,7 +3,7 @@
 
 <% if @current_user == @user %>
   <% @recipes.where(user_id: @current_user.id).each do |recipe| %>
-    <%= link_to image_tag(recipe.image), recipe %>
+    <%= link_to cl_image_tag(recipe.image), recipe %>
     <%= link_to recipe.title, recipe_path(recipe) %>
   <% end %>
 <% end %>

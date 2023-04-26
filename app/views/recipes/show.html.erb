@@ -8,7 +8,7 @@
 <h3> Prep Time: <%= @recipe.preptime %></h3>
 <h3> Cooking Time: <%= @recipe.cooktime %></h3>
 
-<%= image_tag @recipe.image if @recipe.image.present?%>
+<%= cl_image_tag @recipe.image if @recipe.image.present?%>
 <%= video_tag @recipe.video, controls: true, size: "640x480" %>
 
 
