@@ -17,6 +17,7 @@ class RecipesController < ApplicationController
       recipe.image = req["public_id"]
       recipe.save
     end
+    
     @current_user.recipes << recipe
     redirect_to recipe
   end
@@ -56,9 +57,5 @@ class RecipesController < ApplicationController
       params.require(:recipe).permit(:title, :description, :servings, :preptime, :cooktime, :ingredients, :instructions, :image, :video, category_ids: [])
     end
 
-    def convert_video
-      url = @recipe.video
-      video = url.split("=").last 
-    end
   end
   

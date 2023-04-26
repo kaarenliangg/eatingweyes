@@ -1,5 +1,45 @@
 /*  */
 
+/* TOP BANNER  */
+/*  background color */
+.top_banner {
+  background-color: #EECF31;
+  height: 30px;
+}
+
+.banner_text {
+  font-family: 'Poppins semibold', sans-serif;
+  line-height: 2;
+  text-align: center;
+  color: white;
+}
+
+/* HEADER / LOGO */
+.header {
+  background-color: rgb(20, 153, 254);
+  height: 120px;
+}
+
+.logo_container {
+  width: 1000px;
+  display: block;
+  margin: 0 auto;
+  height: 120px;
+}
+.logo_header {
+  height: 80px;
+  display: block;
+  margin: 0 auto;
+  padding-top: 1.5%;
+}
+
+/* NAV BAR */
+
+
+body {
+  margin: -16px 0px 0 0px;
+}
+
 /* website container */
 .container {
   max-width: 1200px;

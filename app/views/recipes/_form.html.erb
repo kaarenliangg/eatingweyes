@@ -1,38 +1,41 @@
 <%= form_for(@recipe, :html => { :multipart => true }) do |f| %>
     <%= f.label :title, 'Name' %>
-    <%= f.text_field :title, :placeholder => 'Butter Chicken' %>
+    <%= f.text_field :title, :required => true, :placeholder => 'Butter Chicken' %>
 
     <%= f.label :description %>
-    <%= f.text_area :description, :placeholder => 'Aromatic golden chicken pieces in an incredible creamy curry sauce, this Butter Chicken recipe is one of the best you will try!'%>
+    <%= f.text_area :description, :required => true, :placeholder => 'Aromatic golden chicken pieces in an incredible creamy curry sauce, this Butter Chicken recipe is one of the best you will try!'%>
 
     <%= f.label :servings %>
-    <%= f.number_field :servings, :placeholder => '2' %>
+    <%= f.number_field :servings, :required => true, :placeholder => '2' %>
 
     <%= f.label :preptime, 'Prep Time' %>
-    <%= f.text_field :preptime, :placeholder => '1hr 5mins' %>
+    <%= f.text_field :preptime, :required => true, :placeholder => '1hr 5mins' %>
 
     <%= f.label :cooktime, 'Cooking Time' %>
-    <%= f.text_field :cooktime, :placeholder => '1hr 5mins' %>
+    <%= f.text_field :cooktime, :required => true, :placeholder => '1hr 5mins' %>
 
     <%= f.label :ingredients %>
-    <%= f.text_area :ingredients, :placeholder => 'Comma(,) will separate into dot points. 4 eggs,1 scallion, 2 small to medium tomatoes, 3/4 tsp salt, 1/4 tsp white pepper, 1/2 tsp sesame oil, 1 tsp shaoxing wine, 3 tbsp vegetable oil, 2 tsp sugar, 1/4 - 1/2 cup water' %>
+    <%= f.text_area :ingredients, :required => true, :placeholder => 'Comma(,) will separate into dot points. 4 eggs,1 scallion, 2 small to medium tomatoes, 3/4 tsp salt, 1/4 tsp white pepper, 1/2 tsp sesame oil, 1 tsp shaoxing wine, 3 tbsp vegetable oil, 2 tsp sugar, 1/4 - 1/2 cup water' %>
 
     <%= f.label :instructions %>
-    <%= f.text_area :instructions, :placeholder => 'Underscore(_) will separate into numbered lists. 
+    <%= f.text_area :instructions, :required => true, :placeholder => 'Underscore(_) will separate into numbered lists. 
 In a bowl, combine chicken with all of the ingredients for the chicken marinade; let marinate for 30 minutes to an hour (or overnight if time allows)._
 Heat oil in a large skillet or pot over medium-high heat._When sizzling, add chicken pieces in batches of two or three, making sure not to crowd the pan._
 Fry until browned for only 3 minutes on each side. Set aside and keep warm._(You will finish cooking the chicken in the sauce.)_' %>
+    <%# formatting above to suit textarea layout%>
 
-    <%= f.label :image %>
-    <%= f.cl_image_upload :image, required: true %>
+    <%= f.label :image, 'Upload Image'%>
     <%= f.url_field :image %>
+    <%= f.cl_image_upload :image %>
+    
 
-    <%= f.label :video %>
-    <%= f.url_field :video %>
+    <%= f.label :video, 'Embed Video' %>
+    <%= f.url_field :video, :placeholder => 'https://www.youtube.com/watch?v=Wn8ox93Qhus'%>
 
-    <%= f.label :category_ids %>
+    <%= f.label :category_id, 'Select Category' %>
     <%= f.collection_check_boxes :category_ids, Category.all, :id, :name %>
-    <%# find all the data using Category.all and then selecting the id and name  %>
+
+    <%# {} indicating not specifying additional options for check_boxes %>
 
     <%= f.submit %>
 <% end %>

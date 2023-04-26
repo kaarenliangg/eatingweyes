@@ -11,9 +11,9 @@
 <%= cl_image_tag @recipe.image if @recipe.image.present?%>
 
 
-    <%= get_video_iframe(@recipe.video) %>
+    <%= get_video_iframe(@recipe.video) if @recipe.video.present? %>
 
-<%  video_tag(@recipe.video, controls: true, size: "640x480") %> 
+
 
 
 <% ingredients_array = @recipe.ingredients.split(',') %>
