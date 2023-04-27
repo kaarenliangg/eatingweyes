@@ -8,6 +8,7 @@ a {
 
 a:hover {
   color: #f1d12f;
+  transition: 0.3s;
 }
 
 nav {
@@ -15,8 +16,13 @@ nav {
 }
 
 h1 {
-  font-family: 'Fredoka',Halvetica, sans-serif;
+  font-family: 'Fredoka',Helvetica, sans-serif;
   color: rgb(20, 153, 254);
+}
+
+p, ul, ol, li {
+  font-family: 'Poppins light', Helvetica, sans-serif;
+  font-size: 11.8pt;
 }
 
 /* TOP BANNER  */
@@ -69,7 +75,7 @@ h1 {
 }
 
 .arrow {
-  border: solid black;
+  border: solid rgb(168, 168, 168);
   border-width: 0 3px 3px 0;
   display: inline-block;
   padding: 3px;
@@ -80,15 +86,15 @@ h1 {
   -webkit-transform: rotate(45deg);
 }
 
-
 /* Dropdown Button */
 .dropbtn {
   color: rgb(58 58 58);
+  height: 20px;
   padding-right: 50px;
   font-size: 16px;
   border: none;
   font-family: 'poppins semibold', Helvetica, sans-serif;
-
+  transition: 0.3s;
 }
 
 /* The container <div> - needed to position the dropdown content */
@@ -106,6 +112,7 @@ h1 {
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
+  transition: 0.3s;
 }
 
 /* Links inside the dropdown */
@@ -114,6 +121,7 @@ h1 {
   padding: 12px 16px;
   text-decoration: none;
   display: block;
+  transition: 0.3s;
 }
 
 /* Change color of dropdown links on hover */
@@ -131,11 +139,103 @@ h1 {
   color: #f1d12f;
 }
 
+/* RECIPE PAGE FOR ALL */
+.category_tag {
+  background-color: rgb(232, 245, 255);
+  font-family: 'Poppins Semibold', Helvetica, sans-serif;
+  color: rgb(20, 153, 254);
+  padding: 2px 10px 2px 10px;
+}
 
+.show_title {
+  font-size: 35pt;
+  margin-bottom: 10px;
+}
+
+h3 {
+  font-family: 'Poppins Semibold',Helvetica, sans-serif;
+  font-size: 12pt;
+  display: inline-block;
+  color: rgb(58 58 58);
+  margin: 30px 0 4px 0;
+}
+
+
+.description_container {
+  max-width: 85%;
+}
+
+.recipe_highlight {
+  color: rgb(20, 153, 254);
+}
+
+.separator {
+  font-family: "Poppins light";
+  color: rgb(202, 202, 202);
+}
+
+.recipe_image {
+  display: flex;
+  max-height: 50em;
+}
+
+.recipe_heading {
+  color: rgb(20, 153, 254);
+  margin-bottom: -20px;
+  font-size: 13pt;
+}
+
+.control_buttons {
+  display: inline-block;
+  font-family: 'Poppins semibold', Helvetica, sans-serif;
+  text-align: center;
+  padding: 5px 10px 5px 10px;
+  background-color: #ffd723;
+  color: #ffffff;
+
+}
+
+.control_buttons:hover {
+  transition: 0.5s;
+  background-color: #ffeea3;
+  color: rgb(255, 188, 6);
+}
+
+ol {
+  line-height: 1.7;
+  max-width: 80%;
+}
+
+ol li {
+  margin-bottom: 10px ;
+}
+
+ol li::marker {
+  font-family: 'Poppins semibold', Arial, Helvetica, sans-serif;
+}
 
 img {
   max-height: 30em;
+  display: flex;
+  margin-bottom: 20px;
 }
+
+
+.recipe_show_name {
+  font-family: 'Poppins semibold', Arial, Helvetica, sans-serif;
+  display: inline-block;
+  border: solid 1px purple;
+  text-align: center;
+  height: 20px;
+}
+
+.recipe_grid {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  border: solid 2px green;
+}
+
+/* RECIPE PAGE INDIVIDUAL RECIPE */
 
 body {
   margin: -16px 0px 0 0px;

@@ -6,7 +6,8 @@ class CategoriesController < ApplicationController
   end
 
   def new
-    @categories = Category.new
+    @category = Category.new
+    @categories = Category.all
   end
 
   def create

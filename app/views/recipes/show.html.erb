@@ -1,26 +1,32 @@
-<h1><%= @recipe.title %></h1>
+<h1 class="show_title"><%= @recipe.title %></h1>
 
 <% @categories.each do |category| %>
-  <%= link_to category.name, category_path(category) %>
+  <%= link_to category.name, category_path(category), :class => 'category_tag' %>
 <% end %>
 
-<h3> Serving: <%= @recipe.servings %></h3>
-<h3> Prep Time: <%= @recipe.preptime %></h3>
-<h3> Cooking Time: <%= @recipe.cooktime %></h3>
+<br>
+<h3> Servings: <span class="recipe_highlight"><%= @recipe.servings %></span><span class="separator"> &#160; | &#160;</span> </h3>
+<h3> Prep Time: <span class="recipe_highlight"><%= @recipe.preptime %></span><span class="separator"> &#160; | &#160;</span> </h3>
+<h3> Cooking Time: <span class="recipe_highlight"><%= @recipe.cooktime %><span></h3>
 
-<%= cl_image_tag @recipe.image if @recipe.image.present?%>
+<div class="description_container">
+    <p><%= @recipe.description %></p>
+</div>
+
+<%= cl_image_tag @recipe.image, :class => "recipe_image" if @recipe.image.present?%>
 <%= get_video_iframe(@recipe.video) if @recipe.video.present? %>
 
 <% ingredients_array = @recipe.ingredients.split(',') %>
-<h3>Ingredients:</h3>
-<ul>
+<br>
+<h3 class="recipe_heading">Ingredients</h3>
+<ul class='dot_color'>
     <% ingredients_array.each do |ingredient| %>
         <li><%= ingredient.strip %></li>
     <% end %>
 </ul>
 
 <% instructions_array = @recipe.instructions.split('_') %>
-<h3>Instructions:</h3>
+<h3 class="recipe_heading">Instructions</h3>
 <ol>
     <% instructions_array.each do |instruction| %>
         <li><%= instruction.strip %></li>
@@ -29,7 +35,8 @@
 
  <% if @current_user == @recipe.user || @current_user.admin? %>
     <div class="control">
-        <%= link_to "Edit Recipe", edit_recipe_path(@recipe) %>
-        <%= link_to "Delete Recipe", @recipe, :method => :delete, :data => { :confirm => 'Are you sure?'} %>
+        <%= link_to "Edit Recipe", edit_recipe_path(@recipe), :class => "control_buttons" %>
+        <%= link_to "Delete Recipe", @recipe, :method => :delete, :class => "control_buttons", :data => { :confirm => 'Are you sure?'} %>
     </div>
+    <br>
 <% end %>

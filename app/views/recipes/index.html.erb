@@ -1,7 +1,13 @@
 <h1>All Recipes</h1>
 
-<% @recipes.each do |recipe| %>
-    <%= link_to cl_image_tag(recipe.image), recipe %>
-    <%= link_to recipe.title, recipe_path(recipe) %>
-<% end %>
+<div class="recipe_grid">
+    <% @recipes.each do |recipe| %>
+        <div class="show_image">
+            <%= link_to cl_image_tag(recipe.image), recipe %>
+        </div>
+        <div class="recipe_show_title">
+            <%= link_to recipe.title, recipe_path(recipe), :class => 'recipe_show_name' %>
+        </div>
+    <% end %>
+</div>
 
