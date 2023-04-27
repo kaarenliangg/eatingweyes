@@ -15,16 +15,20 @@ nav {
   font-family: 'poppins semibold', Helvetica, sans-serif;
 }
 
-h1 {
-  font-family: 'Fredoka',Helvetica, sans-serif;
+h1,h2 {
+  font-family: 'Fredoka', Helvetica, sans-serif;
   color: rgb(20, 153, 254);
 }
 
-p, ul, ol, li {
+p, ul, ol, li, input, .input_text {
   font-family: 'Poppins light', Helvetica, sans-serif;
   font-size: 11.8pt;
 }
 
+label {
+  font-family: 'Poppins semibold', Helvetica, sans-serif;
+  display: inline-block;
+}
 /* TOP BANNER  */
 /*  background color */
 .top_banner {
@@ -192,7 +196,6 @@ h3 {
   padding: 5px 10px 5px 10px;
   background-color: #ffd723;
   color: #ffffff;
-
 }
 
 .control_buttons:hover {
@@ -243,10 +246,34 @@ body {
 
 /* website container */
 .container {
-  max-width: 1200px;
+  max-width: 1000px;
+  padding: 20px;
   margin: 0 auto;    
 }
 
 .thumb {
     height: 14em;
 }
+
+
+/* RECIPE FORM */
+.form_spacing {
+  margin-bottom: 20px;
+}
+
+.submit_button {
+  display: inline-block;
+  font-family: 'Poppins semibold', Helvetica, sans-serif;
+  text-align: center;
+  padding: 5px 10px 5px 10px;
+  background-color: #ffd723;
+  color: #ffffff;
+  border: 0;
+}
+
+.submit_button:hover {
+  transition: 0.5s;
+  background-color: #ffeea3;
+  color: rgb(255, 188, 6);
+}
+
