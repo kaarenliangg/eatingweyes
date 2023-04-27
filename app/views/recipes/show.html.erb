@@ -9,12 +9,7 @@
 <h3> Cooking Time: <%= @recipe.cooktime %></h3>
 
 <%= cl_image_tag @recipe.image if @recipe.image.present?%>
-
-
-    <%= get_video_iframe(@recipe.video) if @recipe.video.present? %>
-
-
-
+<%= get_video_iframe(@recipe.video) if @recipe.video.present? %>
 
 <% ingredients_array = @recipe.ingredients.split(',') %>
 <h3>Ingredients:</h3>
@@ -32,7 +27,7 @@
     <% end %>
 </ol>
 
- <% if @current_user == @recipe.user %>
+ <% if @current_user == @recipe.user || @current_user.admin? %>
     <div class="control">
         <%= link_to "Edit Recipe", edit_recipe_path(@recipe) %>
         <%= link_to "Delete Recipe", @recipe, :method => :delete, :data => { :confirm => 'Are you sure?'} %>
