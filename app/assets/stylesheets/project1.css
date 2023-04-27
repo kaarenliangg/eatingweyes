@@ -323,7 +323,7 @@ img {
   }
 
   .nav_tab {
-    padding-left: 10px;
+    padding-left: 12px;
   }
 
   nav {
@@ -334,6 +334,9 @@ img {
     font-size: 11pt;
   }
 
+  h3 {
+    font-size: 11pt;
+  }
 }
 
 @media screen and (max-width: 600px) {
