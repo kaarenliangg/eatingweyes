@@ -58,7 +58,7 @@ module VideosHelper
     # Main function
     # Return a video iframe
     # If the url provided is not a valid YouTube or Vimeo url it returns [nil]
-    def get_video_iframe(url, width = "585px", height = "320px")
+    def get_video_iframe(url, width = "515px", height = "320px")
       if find_vimeo_id(url)
         get_vimeo_iframe(url, width, height) 
       elsif find_youtube_id(url)

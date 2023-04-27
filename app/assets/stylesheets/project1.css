@@ -50,16 +50,16 @@ label {
 }
 
 .logo_container {
-  width: 1200px;
   display: flex;
   margin: 0 auto;
-  height: 120px;
+  height: 110px;
 }
+
 .logo_header {
   height: 80px;
-  display: block;
+  display: flex;
   margin: 0 auto;
-  padding-top: 1.5%;
+  padding-top: 0.5%;
 }
 
 /* NAV BAR */
@@ -307,12 +307,55 @@ img {
 
 .index_content {
   padding: 34px 0 12px 0;
+  text-align: center;
 }
 
 .recipe_show_name {
   font-family: 'Poppins semibold', Arial, Helvetica, sans-serif;
   display: inline-block;
   border: solid 1px red;
-  text-align: center;
   height: 20px;
+  font-size: 14pt;
+  
+}
+
+.collection_check_boxes {
+  color: red;
+}
+
+@media screen and (max-width: 935px) {
+  .nav_bg {
+    height: 100px;
+  }
+
+  .nav_tab {
+    padding-left: 15px;
+  }
+
+}
+
+@media screen and (max-width: 900px) {
+  input {
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .logo_header {
+    height: 60%;
+    padding-top: 19px;
+    transition: 0.1s;
+  }
+
+  img {
+    max-height: 44em;
+  }
+
+  .index_content {
+    margin-top: 106px;
+  }
+
+  textarea {
+    width: 100%;
+  }
+
 }

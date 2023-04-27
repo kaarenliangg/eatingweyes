@@ -11,7 +11,7 @@ class RecipesController < ApplicationController
     recipe = Recipe.new recipe_params
     # recipe = Recipe.create recipe_params
     # CLOUNDINARY EDITS - checking if user has attached image uploading
-    if params[:file].present? 
+    if params[:file].present?
       req = Cloudinary::Uploader.upload(params[:file])
       recipe.image = req["public_id"]
       recipe.save
