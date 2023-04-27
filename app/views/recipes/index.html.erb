@@ -3,10 +3,12 @@
 <div class="recipe_grid">
     <% @recipes.each do |recipe| %>
         <div class="show_image">
-            <%= link_to cl_image_tag(recipe.image), recipe %>
-        </div>
-        <div class="recipe_show_title">
-            <%= link_to recipe.title, recipe_path(recipe), :class => 'recipe_show_name' %>
+            <div class="index_thumbnail">
+                <%= link_to cl_image_tag(recipe.image), recipe %>
+            </div>
+            <div class="index_content">
+                <%= link_to recipe.title, recipe_path(recipe), :class => 'recipe_show_name' %>
+            </div>
         </div>
     <% end %>
 </div>

@@ -37,10 +37,11 @@ You will finish cooking the chicken in the sauce._' %><br>
     <%= f.label :video, 'Attach Video (YouTube or Vimeo)' %>
     <%= f.url_field :video, :class => 'form_spacing', :size=>"50", :placeholder => 'https://www.youtube.com/watch?v=Wn8ox93Qhus'%><br>
 
-    <%= f.label :category_id, 'Select Category' %><br>
-    <%= f.collection_check_boxes :category_ids, Category.all, :id, :name %><br>
-
+    <%= f.label :category_id, 'Select Category', :required => true %><br>
+    <%= f.collection_check_boxes :category_ids, Category.all, :id, :name %>
+    <br>
     <%# {} indicating not specifying additional options for check_boxes %>
 
-    <%= f.submit 'Create Recipe', class: 'submit_button' %>
+    
+    <%= f.submit class: 'submit_button' %>
 <% end %>

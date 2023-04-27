@@ -1,9 +1,17 @@
 
 <h2> <%= @user.name %>'s Recipes </h2>  
 
+<div class="recipe_grid">
 <% if @current_user == @user %>
   <% @recipes.where(user_id: @current_user.id).each do |recipe| %>
-    <%= link_to cl_image_tag(recipe.image), recipe %>
-    <%= link_to recipe.title, recipe_path(recipe), :class => 'recipe_show_name' %>
+    <div class="show_image">
+      <div class="index_thumbnail">
+          <%= link_to cl_image_tag(recipe.image), recipe %>
+      </div>
+      <div class="index_content">
+        <%= link_to recipe.title, recipe_path(recipe), :class => 'recipe_show_name' %>
+      </div>
+    </div>
   <% end %>
 <% end %>
+</div>
