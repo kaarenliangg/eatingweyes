@@ -64,7 +64,7 @@ label {
 
 /* NAV BAR */
 .nav_tab {
-  padding-right: 50px;
+  padding-right: 30px;
   line-height: 3.2;
 }
 
@@ -73,7 +73,7 @@ label {
 }
 
 .nav_container {
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto;
   height: 52px;
 }

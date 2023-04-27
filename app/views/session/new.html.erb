@@ -1,15 +1,19 @@
 <h1>Login</h1>
 
-<% if flash[:error].present?%>
-    <h2><%= flash[:error] %></h2>
-<% end %>
 
 <%= form_tag login_path do %>
-    <%= label_tag :email %>
-    <%= email_field_tag :email %>
+    <%= label_tag :email %><br>
+    <%= email_field_tag :email, '', class: 'form_spacing', size:'50', placeholder: 'name@email.com' %><br>
 
-    <%= label_tag :password %>
-    <%= password_field_tag :password %>
+    <%= label_tag :password %><br>
+    <%= password_field_tag :password, '', class: 'form_spacing', size:'50'  %><br>
 
-    <%= submit_tag "Sign in" %>
+    <%= submit_tag "Sign in", class: 'submit_button' %>
 <% end %>
+
+<% if flash[:error].present?%>
+    <ol>
+        <li><%= flash[:error] %></h2>
+    </ol>
+<% end %>
+
