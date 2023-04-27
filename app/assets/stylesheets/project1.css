@@ -274,12 +274,11 @@ body {
   color: rgb(255, 188, 6);
 }
 
-/* TESTING */ 
+ 
 .recipe_grid {
   grid-gap: 5rem;
   display: grid;
   grid-template-columns: repeat(auto-fill,minmax(315px, 1fr));
-  border: 1px solid red;
 }
 
 .show_image {
@@ -313,14 +312,9 @@ img {
 .recipe_show_name {
   font-family: 'Poppins semibold', Arial, Helvetica, sans-serif;
   display: inline-block;
-  border: solid 1px red;
   height: 20px;
   font-size: 14pt;
   
-}
-
-.collection_check_boxes {
-  color: red;
 }
 
 @media screen and (max-width: 935px) {
@@ -329,16 +323,21 @@ img {
   }
 
   .nav_tab {
-    padding-left: 15px;
+    padding-left: 10px;
+  }
+
+  nav {
+    font-size: 11pt;
+  }
+
+  .dropbtn {
+    font-size: 11pt;
   }
 
 }
 
-@media screen and (max-width: 900px) {
-  input {
-    width: 100%;
-    margin-top: 0;
-  }
+@media screen and (max-width: 600px) {
+  
 
   .logo_header {
     height: 60%;
@@ -357,5 +356,16 @@ img {
   textarea {
     width: 100%;
   }
+  input {
+    width: 100%;
+    margin-top: 0;
+  }
+
+ .checkbox_container {
+  display: block;
+  text-align: center;
+  background-color: rgb(243, 243, 243);
+  padding: 2px;
+ }
 
 }

@@ -38,7 +38,9 @@ You will finish cooking the chicken in the sauce._' %><br>
     <%= f.url_field :video, :class => 'form_spacing', :size=>"50", :placeholder => 'https://www.youtube.com/watch?v=Wn8ox93Qhus'%><br>
 
     <%= f.label :category_id, 'Select Category' %><br>
-    <%= f.collection_check_boxes :category_ids, Category.all, :id, :name %>
+    <%= f.collection_check_boxes :category_ids, Category.all, :id, :name  do |text| %>
+        <%= text.label({ :class => 'checkbox_container' }) { text.check_box + text.text }%><br>
+    <% end %>
     <br>
     
     <%# {} indicating not specifying additional options for check_boxes %>
