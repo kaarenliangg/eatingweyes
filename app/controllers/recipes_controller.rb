@@ -1,16 +1,16 @@
 class RecipesController < ApplicationController
+  # show all recipes
   def index
     @recipes = Recipe.all
   end
 
+  # create new recipes
   def new
     @recipe = Recipe.new
   end
 
   def create
     recipe = Recipe.new recipe_params
-    # recipe = Recipe.create recipe_params
-    # CLOUNDINARY EDITS - checking if user has attached image uploading
     if params[:file].present?
       req = Cloudinary::Uploader.upload(params[:file])
       recipe.image = req["public_id"]
@@ -21,30 +21,32 @@ class RecipesController < ApplicationController
     redirect_to recipe
   end
 
+  # edit recipes
   def edit
     @recipe = Recipe.find params[:id]
     @categories = @recipe.categories
   end
 
+  # make updates to recipe
   def update
     recipe = Recipe.find params[:id]
-    # delete if it clashes
     if params[:file].present? 
       req = Cloudinary::Uploader.upload(params[:file])
       recipe.image = req["public_id"]
       recipe.save
     end
-    ######
     recipe.update recipe_params
     redirect_to recipe
   end
 
+  # Show individual recipes
   def show
     @recipe = Recipe.find params[:id]
     @categories = @recipe.categories
 
   end
 
+  # Delete recipes
   def destroy
     recipe = Recipe.find params[:id]
     recipe.destroy
