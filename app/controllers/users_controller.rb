@@ -1,11 +1,13 @@
 class UsersController < ApplicationController
   before_action :fetch_user
 
+  # show the users profile with all recipes
   def show
     @user = @current_user
     @recipes = Recipe.all
   end
 
+  # new user sign up
   def new
       @user = User.new
   end

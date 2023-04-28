@@ -14,6 +14,7 @@ class SessionController < ApplicationController
     end
   end
 
+  # Destroy / close session when the user logs out
   def destroy
     session[:user_id] = nil
     redirect_to login_path
