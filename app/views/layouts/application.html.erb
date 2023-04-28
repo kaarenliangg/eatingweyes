@@ -38,9 +38,9 @@
                   <% end %>
                 </div>
               </div>
-
+              
               <% if @current_user.present?%>
-                <%= link_to "New Recipe", recipes_new_path, :class => 'nav_tab' %>
+                <%= link_to "New Recipe", new_recipe_path, :class => 'nav_tab' %>
                 <%= link_to "My Recipe",  users_index_path, :class => 'nav_tab' %>
         
               <% if @current_user.admin?%>
@@ -56,7 +56,6 @@
                 <%= link_to "Sign Up", users_new_path, :class => 'nav_tab'%>
                 <%= link_to "Sign In", login_path, :class => 'nav_tab' %>
               <% end %>
-              
           </nav>
         </div>
       </div>
