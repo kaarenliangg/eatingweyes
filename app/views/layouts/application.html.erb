@@ -33,7 +33,7 @@
               <div class="dropdown">
                 <button class="dropbtn">Categories&#160; <i class="arrow down"></i></p></button>
                 <div class="dropdown-content ">
-                  <% Category.all.each do |category| %>
+                <% Category.all.each do |category| %>
                     <a href="<%= category_path(category) %>"><%= category.name %></a>
                   <% end %>
                 </div>
