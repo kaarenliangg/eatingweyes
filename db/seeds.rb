@@ -27,13 +27,26 @@ r5.user_id = u1.id
 r6.user_id = u1.id
 r7.user_id = u1.id
 r8.user_id = u1.id
+r9.user_id = u1.id
+r1.save
+r2.save
+r3.save
+r4.save
+r5.save
+r6.save
+r7.save
+r8.save
 r9.save
+
 
 r10.user_id = u2.id
 r11.user_id = u2.id
 r12.user_id = u2.id
 r13.user_id = u2.id
-r2.save
+r10.save
+r11.save
+r12.save
+r13.save
 puts "#{ Recipe.count } recipes created.", 
 
 Category.destroy_all
@@ -58,7 +71,7 @@ c2.recipes << r4
 c3.recipes << r5
 c4.recipes << r6
 c5.recipes << r2
-c6.recipes << r1 << 7
+c6.recipes << r1 
 c7.recipes << r7
 c8.recipes << r8
 c9.recipes << r9
@@ -66,5 +79,7 @@ c10.recipes << r10
 c11.recipes << r11
 c12.recipes << r12
 c13.recipes << r13
+
+
 
 puts "Categories and Recipes associated"

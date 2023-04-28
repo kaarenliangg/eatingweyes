@@ -33,7 +33,7 @@
     <% end %>
 </ol>
 
- <% if @current_user == @recipe.user || @current_user.admin? %>
+<% if @current_user.try(:admin?) || (@current_user == @recipe.user if @current_user.present?) %>
     <div class="control">
         <%= link_to "Edit Recipe", edit_recipe_path(@recipe), :class => "control_buttons" %>
         <%= link_to "Delete Recipe", @recipe, :method => :delete, :class => "control_buttons", :data => { :confirm => 'Are you sure?'} %>

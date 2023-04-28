@@ -1,17 +1,25 @@
 <h1><%= @category.name %></h1>
 <p><%= @category.description %></p>
 
-<% if @current_user.admin?%>
+<% if @current_user.try(:admin?) %>
     <%= link_to "Edit category", edit_category_path(@category), :class => "control_buttons" %>
     <%= link_to "Delete category", @category, :method => :delete, :data => { :confirm => 'Are you sure?'}, :class => "control_buttons" %>
 <% end %>
 
 
 <h2>Recipes</h2>
-<ul>
-  <% @recipes.each do |recipe| %>
-    <%= link_to image_tag(recipe.image), recipe%>
-    <%= link_to recipe.title, recipe_path(recipe) %>
-  <% end %>
-</ul>
+<div class="recipe_grid">
+  <ul class="border">
+    <% @recipes.each do |recipe| %>
+      <div class="show_image">
+        <div class="index_thumbnail">
+           <%= link_to image_tag(recipe.image), recipe%>
+        </div>
+        <div class="index_content">
+          <%= link_to recipe.title, recipe_path(recipe), :class => 'recipe_show_name' %>
+        </div>
+    </div>
+    <% end %>
+  </ul>
+</div>
 

@@ -1,6 +1,7 @@
 /*  */
 
 /* FONTS  */
+
 a {
   text-decoration: none;
   color: rgb(58 58 58);
@@ -19,6 +20,7 @@ h1,h2 {
   font-family: 'Fredoka', Helvetica, sans-serif;
   color: rgb(20, 153, 254);
 }
+
 
 p, ul, ol, li, input, .input_text {
   font-family: 'Poppins light', Helvetica, sans-serif;
@@ -66,6 +68,11 @@ label {
 .nav_tab {
   padding-right: 30px;
   line-height: 3.2;
+}
+
+/* prevent home from going to the edge */
+.left_border {
+  padding-left: 10px;
 }
 
 .nav_bg {
@@ -143,6 +150,12 @@ label {
 .dropdown:hover .dropbtn {
   color: #f1d12f;
 }
+
+/* CATEGORY - recipe align to the edge */
+.border {
+  margin-left: -44px;
+}
+
 
 /* RECIPE PAGE FOR ALL */
 .category_tag {
@@ -328,6 +341,7 @@ img {
 
   nav {
     font-size: 11pt;
+    padding: -10px;
   }
 
   .dropbtn {
