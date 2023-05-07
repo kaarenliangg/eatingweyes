@@ -10,7 +10,7 @@ class RecipesController < ApplicationController
   end
 
   def create
-    recipe = Recipe.new recipe_params
+    recipe = @current_user.recipes.new recipe_params
     if params[:file].present?
       req = Cloudinary::Uploader.upload(params[:file])
       recipe.image = req["public_id"]
@@ -43,7 +43,7 @@ class RecipesController < ApplicationController
   def show
     @recipe = Recipe.find params[:id]
     @categories = @recipe.categories
-
+    @can_edit = @current_user == @recipe.user || current_user.admin?
   end
 
   # Delete recipes

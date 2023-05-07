@@ -80,6 +80,4 @@ c11.recipes << r11
 c12.recipes << r12
 c13.recipes << r13
 
-
-
 puts "Categories and Recipes associated"

@@ -13,7 +13,11 @@
     <p><%= @recipe.description %></p>
 </div>
 
-<%= cl_image_tag @recipe.image, :class => "recipe_image" if @recipe.image.present?%>
+<% if @recipe.image.present?%>
+    <%= cl_image_tag @recipe.image, :class => "recipe_image"%>
+<% else %>
+    <%= image_tag '/img/placeholder.png', :class => "recipe_image" %>
+<% end%>
 <%= get_video_iframe(@recipe.video) if @recipe.video.present? %>
 
 <% ingredients_array = @recipe.ingredients.split(',') %>
@@ -33,7 +37,7 @@
     <% end %>
 </ol>
 
- <% if @current_user.try(:admin?) %>
+ <% if @can_edit %>
     <div class="control">
         <%= link_to "Edit Recipe", edit_recipe_path(@recipe), :class => "control_buttons" %>
         <%= link_to "Delete Recipe", @recipe, :method => :delete, :class => "control_buttons", :data => { :confirm => 'Are you sure?'} %>

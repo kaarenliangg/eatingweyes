@@ -4,7 +4,11 @@
     <% @recipes.each do |recipe| %>
         <div class="show_image">
             <div class="index_thumbnail">
+            <% if recipe.image.present?%>
                 <%= link_to cl_image_tag(recipe.image), recipe %>
+            <% else %>
+                    <%= image_tag '/img/placeholder.png' %>
+            <% end %>
             </div>
             <div class="index_content">
                 <%= link_to recipe.title, recipe_path(recipe), :class => 'recipe_show_name' %>

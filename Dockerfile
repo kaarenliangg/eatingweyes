@@ -75,7 +75,7 @@ USER rails:rails
 
 # Copy built artifacts: gems, application
 COPY --from=build /usr/local/bundle /usr/local/bundle
-COPY --from=build --chown=rails:rails /rails /rails
+COPY --from=build --chown=rails:rails /rails /rails 
 
 # Deployment options
 ENV RAILS_LOG_TO_STDOUT="1" \
@@ -87,3 +87,4 @@ ENTRYPOINT ["/rails/bin/docker-entrypoint"]
 # Start the server by default, this can be overwritten at runtime
 EXPOSE 3000
 CMD ["./bin/rails", "server"]
+
